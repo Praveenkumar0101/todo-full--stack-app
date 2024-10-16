@@ -75,7 +75,7 @@ app.get('/tasks', (req, res) => {
       return res.status(500).send('Server Error');
     }
     res.status(200).json(results);
-    conn.release(); // Send back the results as JSON
+    // db.release(); // Send back the results as JSON
   });
 });
 
@@ -94,7 +94,7 @@ app.post('/tasks', upload.single('file'), (req, res) => {
       return res.status(500).send('Server Error');
     }
     res.status(201).send({ id: results.insertId, task_name, description, status, priority, deadline });
-    conn.release();
+    // db.release();
   });
 
 });
@@ -114,7 +114,7 @@ app.put('/tasks/:id', upload.single('file'), (req, res) => {
       return res.status(500).send('Server Error');
     }
     res.status(200).send({ id, task_name, description, status, priority, deadline });
-    conn.release();
+    // db.release();
   });
 });
 
@@ -129,7 +129,7 @@ app.delete('/tasks/:id', (req, res) => {
       return res.status(500).send('Server Error');
     }
     res.status(204).send(); // Send back a 204 No Content response
-    conn.release();
+    // db.release();
   });
 });
 
@@ -145,7 +145,7 @@ app.delete('/tasks', (req, res) => {
       return res.status(500).send('Server Error');
     }
     console.log('All tasks deleted successfully.');
-    conn.release();
+    // db.release();
     // Reset AUTO_INCREMENT
     db.query(resetAutoIncrementSql, (resetError) => {
       if (resetError) {
