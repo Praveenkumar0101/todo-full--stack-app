@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-export const baseURL = "http://localhost:5000"
+export const baseURL = "https://todo-full-stack-app-backend.onrender.com"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
