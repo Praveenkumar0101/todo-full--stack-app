@@ -132,7 +132,7 @@ function TaskManager() {
           <table className="task-table">
             <thead>
               <tr>
-                <th>ID</th>
+                <th>S.NO</th>
                 <th>Task Name</th>
                 <th>Description</th>
                 <th>Status</th>
